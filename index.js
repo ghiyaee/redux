@@ -19,16 +19,16 @@ const buytablet = () => {
         type: BUY_TABLET
     }
 }
-const initailappelState = {
+const initailmobileState = {
     appel: 50,
     samsung: 5
 
 }
-const initailtabState = {
+const initailtabletState = {
     tablet: 30
 }
 
-const appelReducer = (state = initailappelState, action) => {
+const mobileReducer = (state = initailmobileState, action) => {
     switch (action.type) {
         case BUY_APPEL:
             return {
@@ -43,7 +43,7 @@ const appelReducer = (state = initailappelState, action) => {
                 return state
     }
 }
-const tabletReducer = (state = initailtabState, action) => {
+const tabletReducer = (state = initailtabletState, action) => {
     switch (action.type) {
         case BUY_TABLET:
             return {
@@ -55,7 +55,7 @@ const tabletReducer = (state = initailtabState, action) => {
 }
 
 const rootReducer = combineReducers({
-    appel: appelReducer,
+    mobile: mobileReducer,
     tablet: tabletReducer,
 })
 const store = createStore(rootReducer)
